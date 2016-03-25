@@ -23,15 +23,18 @@ public class HttpRequest {
 
 	public ArrayList<Resources> getStockPrices(ArrayList<Symbol> symbols) {
 		StringBuilder sb = new StringBuilder();
+		ArrayList<Resources> stockList = new ArrayList<Resources>();
 		for (Symbol s : symbols) {
 			sb.append(s.getSymbol());
 			sb.append(",");
 		}
-		String symbolList = sb.toString().substring(0, sb.toString().length() - 1);
+		String symbolList = "";
+		if (sb.toString().length() > 0) {
+			symbolList = sb.toString().substring(0, sb.toString().length() - 1);
 
-		ArrayList<Resources> stockList = new ArrayList<Resources>();
-		if (symbolList.length() > 0) {
-			String url = "http://finance.yahoo.com/webservice/v1/symbols/"+symbolList+"/quote?format=json&view=detail";
+			
+			String url = "http://finance.yahoo.com/webservice/v1/symbols/" + symbolList
+					+ "/quote?format=json&view=detail";
 
 			URL obj;
 			HttpURLConnection con;
@@ -67,6 +70,8 @@ public class HttpRequest {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}else{
+			System.out.println("no data present to query");
 		}
 		return stockList;
 	}
@@ -84,7 +89,6 @@ public class HttpRequest {
 		Gson gson = new Gson();
 		stockList = gson.fromJson(resources, new TypeToken<List<Resources>>() {
 		}.getType());
-
 
 		return stockList;
 	}
