@@ -1,5 +1,9 @@
 package StockService.GetStockPrice.Model;
-
+/**
+ * StockModel is a field in Json response from YAHOO web services so class is used for direct mapping
+ * @author ankita
+ *
+ */
 public class Resource {
 	
 	private StockModel fields;

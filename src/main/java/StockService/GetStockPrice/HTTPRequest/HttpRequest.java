@@ -18,7 +18,11 @@ import com.google.gson.reflect.TypeToken;
 
 import StockService.GetStockPrice.Model.Resources;
 import StockService.GetStockPrice.Model.Symbol;
-
+/**
+ * Get the stock price for symbol from Yahoo web services
+ * @author ankita
+ *
+ */
 public class HttpRequest {
 
 	public ArrayList<Resources> getStockPrices(ArrayList<Symbol> symbols) {

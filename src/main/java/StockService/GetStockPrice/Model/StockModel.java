@@ -1,12 +1,18 @@
 package StockService.GetStockPrice.Model;
 import java.util.Date;
+/**
+ * Model class containing important data for a stock gathered from web YAHOO
+ * services. Out of many fields available in response the application saves name,
+ * price, volume, date and time for a particular stock
+ * 
+ * @author ankita
+ *
+ */
 
 public class StockModel {
 	
 	private String name;
 	private String symbol;
-	private double day_high;
-	private double day_low;
 	private double price;
 	private long ts;
 	private long volume;
@@ -21,18 +27,6 @@ public class StockModel {
 	}
 	public void setSymbol(String symbol) {
 		this.symbol = symbol;
-	}
-	public double getDay_high() {
-		return day_high;
-	}
-	public void setDay_high(double day_high) {
-		this.day_high = day_high;
-	}
-	public double getDay_low() {
-		return day_low;
-	}
-	public void setDay_low(double day_low) {
-		this.day_low = day_low;
 	}
 	public double getPrice() {
 		return price;
@@ -55,7 +49,7 @@ public class StockModel {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return name+" "+price+" "+day_high+" "+day_low+" "+new Date(ts*1000);
+		return name+" "+price+" "+new Date(ts*1000);
 	}
 	
 

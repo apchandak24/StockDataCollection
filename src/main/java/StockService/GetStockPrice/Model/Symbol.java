@@ -1,6 +1,11 @@
 package StockService.GetStockPrice.Model;
 
 import javax.xml.bind.annotation.XmlRootElement;
+/**
+ * Model class to store symbol name.
+ * @author ankita
+ *
+ */
 
 @XmlRootElement
 public class Symbol {
