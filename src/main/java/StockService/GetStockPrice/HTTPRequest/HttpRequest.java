@@ -29,7 +29,7 @@ public class HttpRequest {
 		}
 		String symbolList = sb.toString().substring(0, sb.toString().length() - 1);
 
-		ArrayList<Resources> stockList = new ArrayList<>();
+		ArrayList<Resources> stockList = new ArrayList<Resources>();
 		if (symbolList.length() > 0) {
 			String url = "http://finance.yahoo.com/webservice/v1/symbols/"+symbolList+"/quote?format=json&view=detail";
 
@@ -72,7 +72,7 @@ public class HttpRequest {
 	}
 
 	private ArrayList<Resources> parseJson(String response) {
-		ArrayList<Resources> stockList = new ArrayList<>();
+		ArrayList<Resources> stockList = new ArrayList<Resources>();
 		JsonParser parser = new JsonParser();
 		JsonObject obj = parser.parse(response).getAsJsonObject();
 

@@ -18,9 +18,13 @@ public class DatabaseService {
 
 	public DatabaseService() {
 	}
-
+	/**
+	 * Get the list of symbols entered by user from database
+	 * @param dbConnection
+	 * @return ArrayList<Symbol>
+	 */
 	public ArrayList<Symbol> getSymbolList(Connection dbConnection)  {
-		ArrayList<Symbol> symbols = new ArrayList<>();
+		ArrayList<Symbol> symbols = new ArrayList<Symbol>();
 		try {
 			Statement stmt = dbConnection.createStatement();
 			String query = "SELECT * from " + SYMBOL_TABLE_NAME;

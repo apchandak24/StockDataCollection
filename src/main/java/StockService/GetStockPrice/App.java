@@ -20,7 +20,7 @@ public class App
        App app = new App();
        Connection dbConnection = DatabaseHelper.getConnection(app.loadPropertiesFile());
        HttpRequest req = new HttpRequest();
-       ArrayList<Resources> stocks=new ArrayList<>();
+       ArrayList<Resources> stocks=new ArrayList<Resources>();
 	try {
 		stocks = req.getStockPrices(service.getSymbolList(dbConnection));
 		for(Resources s :stocks){
