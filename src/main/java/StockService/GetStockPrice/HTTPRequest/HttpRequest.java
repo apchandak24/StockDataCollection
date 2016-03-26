@@ -41,7 +41,7 @@ public class HttpRequest {
 					+ "/quote?format=json&view=detail";
 
 			URL obj;
-			HttpURLConnection con;
+			HttpURLConnection con=null;
 
 			try {
 				obj = new URL(url);
@@ -73,6 +73,9 @@ public class HttpRequest {
 				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
+			}finally {
+				if(con!=null)
+				con.disconnect();
 			}
 		}else{
 			System.out.println("no data present to query");
